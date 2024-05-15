@@ -1,16 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
-  </head>
-  <body>
-    <main>
-        <h1 class="h3">Welcome to My Website</h1>  
-        <p class="d-none">Hello</p>
-    </main>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Website</title>
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+  <nav>
+    <div class="container text-center">
+      <h1>Kris Reay's Dev blog</h1>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="card p-4">
+        <h2>Introduction/overview</h2>
+        <p>Recently I have been building a rudimentary record system for use by an education provider. In this article I
+          will detail the process and methods I used for each class.</p>
+
+        <h2>Architecture and classes</h2>
+        <p>In my classes I have used inheritance to create my class structure which is the act of using a super class
+          (the class a subclass is inheriting from) as a template where the subclass (the class that is inheriting from
+          the super class) then has the same behaviours as the super class but can add or override them. An example of a
+          basic inheritance diagram is shown in the diagram below from the official Java documentation. (<a
+            href="https://docs.oracle.com/javase/tutorial/java/concepts/inheritance.html">What Is Inheritance? (The
+            Java™ Tutorials > Learning the Java Language > Object-Oriented Programming Concepts) (oracle.com)</a>) </p>
+        <p>With the use of classes, I have used encapsulation to increase the security of my code. Encapsulation is the
+          use of the private keyword, getters, and setters to restrict direct access to variables. The advantage of this
+          that I have taken advantage of in my program is that it provides data hiding, protecting the variables from
+          external sources but other advantages that are useful but not applicable in my program include increased
+          control and reduced exceptions of the variables <a
+            href="https://dev.to/princeibs/oop-series-encapsulation-in-java-1n51">(OOP Series: Encapsulation In Java -
+            DEV Community)</a></p>
+
+        <h2>Main class</h2>
+        <p>The main class is where the basic initialization of key properties and some generic methods takes place.</p>
+        <p>The main method is called when the program runs and it’s where the Staff, Student, and Course lists are
+          populated using functions in the ReadFiles class. An instance of the Menu class called menu is also
+          instantiated and then the mainMenu function of the Menu class is run. </p>
+
+        <h2>Globals class</h2>
+        <p>The Globals class contains a few variables that can be used anywhere in the program, this is done primarily
+          to circumvent the lack of a dedicated database for the system and allows the program to access all stored data
+          easily. These are public static so can be accessed from anywhere in the program.</p>
+        <p>The scanner is created in the Globals class, parsing the values it is given. The scanner takes System.in
+          which means it parses the user’s input and allows them to interact with the program. You can read more about
+          the Scanner class on the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html">Oracle
+            official docs</a>. This uses the final keyword which means after a value is declared, it cannot be modified
+          elsewhere (<a href="https://www.geeksforgeeks.org/final-keyword-in-java/">final Keyword in Java -
+            GeeksforGeeks</a>), adding security as it should not be changed.</p>
+        <p>Three ArrayList objects are created that store staff (StaffList), students (StudentList) and courses
+          (CourseList) that have been recorded. These are ArrayList objects as opposed to a regular array as they must
+          have a dynamic length as the program allows the creation of new staff, students, and courses and a regular
+          array has a static length and cannot be changed after initialisation
+          (<a
+            href="https://howtodoinjava.com/java/array/array-vs-arraylist/">https://howtodoinjava.com/java/array/array-vs-arraylist/</a>).
+        </p>
+
+        <h2>Menu class</h2>
+        <p>The menu class has all the generic menu functions. Most menus with user interaction are done using while
+          loops to repeat the menu until it is not needed anymore and selection for acting upon user input. For menus I
+          have used primarily switch-case statements as they are faster for selection statements with more than 5 cases
+          (<a href="https://www.geeksforgeeks.org/switch-vs-else/">switch vs if else - GeeksforGeeks</a>) which will not
+          affect these menus now but allows for expansion without
+          having to refactor for efficiency. </p>
+        <p>The login function is also part of this class which uses a for loop to check through each student or staff
+          member and makes a comparison between the id input and the object in that iteration of the loop to check if
+          they match. If it does match, the user is prompted to enter the password, which uses a while loop and an int
+          counter to allow a certain number of attempts before being returned to the main menu. To check the passwords,
+          the program uses and if statement and .equals() to perform a string comparison. String.equals() compares the
+          content of two String objects, it is important to use this instead of == because a String is not a primitive
+          type, it is an object so == compares the references of the strings which may be different even if the content
+          of the String is equal (<a href="https://howtodoinjava.com/java/string/string-equals-method/">Java
+            String.equals() with Examples - HowToDoInJava</a>).</p>
+      </div>
+    </div>
+  </main>
+</body>
+
 </html>
