@@ -25,8 +25,8 @@
         <h2>Architecture and Classes</h2>
 
         <p>In my classes I have used inheritance to create my class structure which is the act of using a super class
-          (the class a subclass is inheriting from) as a template where the subclass (the class that is inheriting from
-          the super class) then has the same behaviours as the super class but can add or override them. An example of a
+          (class a subclass is inheriting from) as a template where the subclass (class inheriting from
+          the super class) has the same behaviours as the super class but can add or override them. An example of a
           basic inheritance diagram is shown in the diagram below from the official Java documentation (<a
             href="https://docs.oracle.com/javase/tutorial/java/concepts/inheritance.html">What Is Inheritance? (The
             Java™ Tutorials > Learning the Java Language > Object-Oriented Programming Concepts) (oracle.com)</a>).</p>
@@ -34,7 +34,7 @@
         <div class="image-container">
           <figure class="figure">
             <img src="images/Inheritance diagram.jpg" alt="A diagram of classes in a hierarchy." class="img-fluid">
-            <figcaption class="figure-caption">Figure 1: An example of inheritance using types of bike to demonstrate.
+            <figcaption class="figure-caption">Figure 1: An example of inheritance using bike types to demonstrate.
             </figcaption>
           </figure>
 
@@ -91,7 +91,7 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
         <p>The scanner is created in the Globals class, parsing the values it is given. The scanner takes System.in
           which means it parses the user’s input and allows them to interact with the program. You can read more about
           the Scanner class on the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html">Oracle
-            official docs</a>. This uses the final keyword which means after a value is declared, it cannot be modified
+            official docs</a>. This uses the final keyword meaning after a value is declared, it cannot be modified
           elsewhere (<a href="https://www.geeksforgeeks.org/final-keyword-in-java/">final Keyword in Java -
             GeeksforGeeks</a>), adding security as it should not be changed.</p>
         <p>Three ArrayList objects are created that store staff (StaffList), students (StudentList) and courses
@@ -109,7 +109,7 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
           (<a href="https://www.geeksforgeeks.org/switch-vs-else/">switch vs if else - GeeksforGeeks</a>) which will not
           affect these menus now but allows for expansion without
           having to refactor for efficiency. </p>
-        <p>The login function is also part of this class which uses a for loop to check through each student or staff
+        <p>The login function is part of this class which uses a for loop to check through each student or staff
           member and makes a comparison between the id input and the object in that iteration of the loop to check if
           they match. If it does match, the user is prompted to enter the password, which uses a while loop and an int
           counter to allow a certain number of attempts before being returned to the main menu. To check the passwords,
@@ -206,44 +206,45 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
             Between BufferedReader and FileReader in Java -
             GeeksforGeeks</a>).</p>
 
-        <div class="table-responsive">
-          <table class="table table-striped table-light">
-            <thead>
-              <tr>
-                <th>Basis</th>
-                <th>BufferedReader</th>
-                <th>BufferedWriter</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Use</td>
-                <td>It is used to read characters from any type of character input stream (String, Files, etc.)</td>
-                <td>It can be used only for reading files</td>
-              </tr>
-              <tr>
-                <td>Buffer</td>
-                <td>Uses Buffer internally to read characters from</td>
-                <td>Doesn’t use Buffer. Directly reads from the file by accessing the hard drive.</td>
-              </tr>
-              <tr>
-                <td>Speed</td>
-                <td>Faster</td>
-                <td>Slower</td>
-              </tr>
-              <tr>
-                <td>Efficiency</td>
-                <td>Much more efficient for reading files</td>
-                <td>Less efficient</td>
-              </tr>
-              <tr>
-                <td>Reading Lines</td>
-                <td>BufferedReader can be used to read a single character at a time as well as a line at a time.</td>
-                <td>It can read only one character at a time, can not read lines</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <figure>
+          <div class="table-responsive">
+            <table class="table table-striped table-light">
+              <thead>
+                <tr>
+                  <th>Basis</th>
+                  <th>BufferedReader</th>
+                  <th>FileReader</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Use</td>
+                  <td>It is used to read characters from any type of character input stream (String, Files, etc.)</td>
+                  <td>It can be used only for reading files</td>
+                </tr>
+                <tr>
+                  <td>Buffer</td>
+                  <td>Uses Buffer internally to read characters from</td>
+                  <td>Doesn’t use Buffer. Directly reads from the file by accessing the hard drive.</td>
+                </tr>
+                <tr>
+                  <td>Speed</td>
+                  <td>Faster</td>
+                  <td>Slower</td>
+                </tr>
+                <tr>
+                  <td>Efficiency</td>
+                  <td>Much more efficient for reading files</td>
+                  <td>Less efficient</td>
+                </tr>
+                <tr>
+                  <td>Reading Lines</td>
+                  <td>BufferedReader can be used to read a single character at a time as well as a line at a time.</td>
+                  <td>It can read only one character at a time, can not read lines</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <figcaption class="figure-caption">Figure 2: A table comparing BufferedReader as opposed to FileReader.
           </figcaption>
         </figure>
