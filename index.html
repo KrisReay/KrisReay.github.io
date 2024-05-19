@@ -27,9 +27,10 @@
         <p>In my classes I have used inheritance to create my class structure which is the act of using a super class
           (class a subclass is inheriting from) as a template where the subclass (class inheriting from
           the super class) has the same behaviours as the super class but can add or override them. An example of a
-          basic inheritance diagram is shown in the diagram below from the official Java documentation (<a
-            href="https://docs.oracle.com/javase/tutorial/java/concepts/inheritance.html">What Is Inheritance? (The
-            Java™ Tutorials > Learning the Java Language > Object-Oriented Programming Concepts) (oracle.com)</a>).</p>
+          basic inheritance diagram is shown in the diagram below from the
+          <a href="https://docs.oracle.com/javase/tutorial/java/concepts/inheritance.html">official Java
+            documentation</a>.
+        </p>
 
         <div class="image-container">
           <figure class="figure">
@@ -43,10 +44,9 @@
         <p>With the use of classes, I have used encapsulation to increase the security of my code. Encapsulation is the
           use of the private keyword, getters, and setters to restrict direct access to variables. The advantage of this
           that I have taken advantage of in my program is that it provides data hiding, protecting the variables from
-          external sources but other advantages that are useful but not applicable in my program include increased
-          control and reduced exceptions of the variables <a
-            href="https://dev.to/princeibs/oop-series-encapsulation-in-java-1n51">(OOP Series: Encapsulation In Java -
-            DEV Community)</a></p>
+          external sources but other advantages that are useful but not applicable in my program include <a
+            href="https://dev.to/princeibs/oop-series-encapsulation-in-java-1n51">increased
+            control and reduced exceptions of the variables</a>.</p>
 
 
         <pre class="m-0 p-2 bg-dark text-light rounded overflow-x-auto"><code>// List of staff assigned to course
@@ -91,40 +91,41 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
         <p>The scanner is created in the Globals class, parsing the values it is given. The scanner takes System.in
           which means it parses the user’s input and allows them to interact with the program. You can read more about
           the Scanner class on the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html">Oracle
-            official docs</a>. This uses the final keyword meaning after a value is declared, it cannot be modified
-          elsewhere (<a href="https://www.geeksforgeeks.org/final-keyword-in-java/">final Keyword in Java -
-            GeeksforGeeks</a>), adding security as it should not be changed.</p>
+            official docs</a>. This uses the final keyword meaning after a value is declared, it <a
+            href="https://www.geeksforgeeks.org/final-keyword-in-java/">cannot be modified</a>, adding security as it
+          should not be changed.</p>
         <p>Three ArrayList objects are created that store staff (StaffList), students (StudentList) and courses
           (CourseList) that have been recorded. These are ArrayList objects as opposed to a regular array as they must
-          have a dynamic length as the program allows the creation of new staff, students, and courses and a regular
-          array has a static length and cannot be changed after initialisation
-          (<a
-            href="https://howtodoinjava.com/java/array/array-vs-arraylist/">https://howtodoinjava.com/java/array/array-vs-arraylist/</a>).
+          have a dynamic length as the program allows the creation of new staff, students, and courses and a
+          <a href="https://howtodoinjava.com/java/array/array-vs-arraylist/">regular
+            array has a static length and cannot be changed after initialisation</a>.
         </p>
 
         <h3>Menu Class</h3>
         <p>The menu class has all the generic menu functions. Most menus with user interaction are done using while
           loops to repeat the menu until it is not needed anymore and selection for acting upon user input. For menus I
-          have used primarily switch-case statements as they are faster for selection statements with more than 5 cases
-          (<a href="https://www.geeksforgeeks.org/switch-vs-else/">switch vs if else - GeeksforGeeks</a>) which will not
+          have used primarily switch-case statements as they are <a
+            href="https://www.geeksforgeeks.org/switch-vs-else/">faster for selection statements with more than 5
+            cases</a> which will not
           affect these menus now but allows for expansion without
           having to refactor for efficiency. </p>
         <p>The login function is part of this class which uses a for loop to check through each student or staff
           member and makes a comparison between the id input and the object in that iteration of the loop to check if
           they match. If it does match, the user is prompted to enter the password, which uses a while loop and an int
           counter to allow a certain number of attempts before being returned to the main menu. To check the passwords,
-          the program uses and if statement and .equals() to perform a string comparison. String.equals() compares the
-          content of two String objects, it is important to use this instead of == because a String is not a primitive
+          the program uses and if statement and .equals() to perform a string comparison. <a
+            href="https://howtodoinjava.com/java/string/string-equals-method/">String.equals() compares the
+            content of two String objects</a> therefore it is important to use this instead of == because a String is
+          not a primitive
           type, it is an object so == compares the references of the strings which may be different even if the content
-          of the String is equal (<a href="https://howtodoinjava.com/java/string/string-equals-method/">Java
-            String.equals() with Examples - HowToDoInJava</a>).</p>
+          of the String is equal.</p>
 
         <h3>Person Class</h3>
         <p>The person class is an abstract class used as a base class for system user classes to inherit from and holds
           the basic properties and methods that are used by all users. This is an abstract class which means that
-          objects cannot be created off it and to create an object, another class must inherit it and be used to create
-          the object provided the class inheriting it isn’t abstract (<a
-            href="https://www.w3schools.com/java/java_abstract.asp">Java Abstraction (w3schools.com)</a>). I’ve done
+          objects cannot be created off it and to create an object, <a
+            href="https://www.w3schools.com/java/java_abstract.asp">another class must inherit it and be used to create
+            the object provided the class inheriting it isn’t abstract</a>. I’ve done
           this
           because there shouldn’t be a generic person made and it provides security by hiding information from the user
           that isn’t essential to them. </p>
@@ -138,10 +139,9 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
         <p>The admin class inherits from the staff class and adds functionality for only admins such as adding new staff
           members. It also overrides the actionMenu() method which is used to choose the action the user would like to
           make to allow the user to access the functions available to only them. This is done using method overriding
-          which means the actionMenu() function declared in the staff class, the base class, is overridden and the
-          function in the admin class, the subclass, is used (Overriding and Hiding Methods (<a
-            href="https://docs.oracle.com/javase/tutorial/java/IandI/override.html">The Java™ Tutorials >
-            Learning the Java Language > Interfaces and Inheritance) (oracle.com)</a>). </p>
+          which means the actionMenu() function declared in the staff class, the base class, <a
+            href="https://docs.oracle.com/javase/tutorial/java/IandI/override.html">is overridden and the
+            function in the admin class, the subclass, is used</a>. </p>
 
         <h4>Teacher and Student Classes</h4>
 
@@ -158,11 +158,11 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
         <h3>CourseTypes</h3>
 
         <p>The CourseTypes is an enum which holds each type of course as constants. An enum is appropriate for this as
-          there is a limited number of CourseTypes available in the program, making it easily readable and preventing
-          any
-          errors caused by passing in an invalid value (<a
-            href="https://stackoverflow.com/questions/4709175/what-are-enums-and-why-are-they-useful/4709224#4709224">java
-            - What are enums and why are they useful? - Stack Overflow</a>).</p>
+          there is a limited number of CourseTypes available in the program, <a
+            href="https://stackoverflow.com/questions/4709175/what-are-enums-and-why-are-they-useful/4709224#4709224">making
+            it easily readable and preventing
+            any
+            errors caused by passing in an invalid value</a>.</p>
 
         <pre class="m-0 p-2 bg-dark text-light rounded overflow-x-auto"><code>public enum CourseTypes
 {
@@ -180,15 +180,13 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
           creates a new file with the file path being set to the directory passed into the function and the id of the
           object appended to it. It then creates the directory if it doesn’t already exist using mkdir(). I then created
           a
-          FileWriter passing in the File created before and use that to create a new BufferedWriter. Using
-          BufferedWriter
-          allows efficient writing (<a
-            href="https://www.geeksforgeeks.org/io-bufferedwriter-class-methods-java/">Java.io.BufferedWriter class
-            methods in Java - GeeksforGeeks</a>) by making less system
-          calls compared to just using FileWriter if there are multiple writes before being closed (<a
-            href="https://stackoverflow.com/questions/12350248/java-difference-between-filewriter-and-bufferedwriter/12350364#12350364">file
-            io - Java
-            difference between FileWriter and BufferedWriter - Stack Overflow</a>).</p>
+          FileWriter passing in the File created before and use that to create a new BufferedWriter. <a
+            href="https://www.geeksforgeeks.org/io-bufferedwriter-class-methods-java/">Using
+            BufferedWriter
+            allows efficient writing</a> by <a
+            href="https://stackoverflow.com/questions/12350248/java-difference-between-filewriter-and-bufferedwriter/12350364#12350364">making
+            less system
+            calls compared to just using FileWriter if there are multiple writes before being closed</a>.</p>
 
         <h3>ReadFiles</h3>
 
@@ -201,10 +199,8 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
 
         <p>Individual students are read using BufferedReader over FileReader comes with multiple benefits, detailed
           below
-          in the table created by GeeksforGeeks (<a
-            href="https://www.geeksforgeeks.org/difference-between-bufferedreader-and-filereader-in-java/">Difference
-            Between BufferedReader and FileReader in Java -
-            GeeksforGeeks</a>).</p>
+          in the <a href="https://www.geeksforgeeks.org/difference-between-bufferedreader-and-filereader-in-java/">table
+            created by GeeksforGeeks</a>.</p>
 
         <figure>
           <div class="table-responsive">
@@ -254,23 +250,22 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
         <h3>Overview</h3>
 
         <p>To test my system, I decided to use some unit tests which are tests that focus on individual parts of the
-          system to check they all work and help isolate areas of the system (<a
-            hre="https://www.geeksforgeeks.org/unit-testing-software-testing/">Unit Testing - Software Testing -
-            GeeksforGeeks</a>). I have tested some key functions using JUnit 4, an open-source testing framework that
-          uses
-          code annotations to identify test methods to be run (<a
-            href="https://www.vogella.com/tutorials/JUnit4/article.html">Unit Testing with JUnit 4 - Tutorial
-            (vogella.com)</a>).</p>
+          system to check they all work and <a href="https://www.geeksforgeeks.org/unit-testing-software-testing/">help
+            isolate areas of the system</a>. I have tested some key functions using JUnit 4, an open-source testing
+          framework that
+          <a href="https://www.vogella.com/tutorials/JUnit4/article.html">uses
+            code annotations to identify test methods to be run</a>.
+        </p>
 
         <div class="mt-2 mb-3">
           <div class="ratio ratio-16x9">
             <iframe src="https://www.youtube.com/embed/OsCVJX81yIo?si=j7P9_ySsErX0QL7p" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           <figcaption class="figure-caption">Figure 3: A short video detailing how to set up a basic JUnit test.
-            </figcaption>
+          </figcaption>
         </div>
 
 
