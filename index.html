@@ -16,13 +16,13 @@
     <div class="container">
       <div class="card shadow p-4 mt-3">
 
-        <h1 class="m-0 text-center">Kris Reay's Dev blog</h1>
+        <h1 class="m-0 text-center">Kris Reay's Devlog</h1>
 
         <h2>Introduction/overview</h2>
         <p>Recently I have been building a rudimentary record system for use by an education provider. In this article I
           will detail the process and methods I used for each class.</p>
 
-        <h2>Architecture and classes</h2>
+        <h2>Architecture and Classes</h2>
 
         <p>In my classes I have used inheritance to create my class structure which is the act of using a super class
           (the class a subclass is inheriting from) as a template where the subclass (the class that is inheriting from
@@ -63,7 +63,7 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
 }</code></pre>
 
 
-        <h3>Main class</h3>
+        <h3>Main Class</h3>
         <p>The main class is where the basic initialization of key properties and some generic methods takes place.</p>
         <p>The main method is called when the program runs and it’s where the Staff, Student, and Course lists are
           populated using functions in the ReadFiles class. An instance of the Menu class called menu is also
@@ -84,7 +84,7 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
     Globals.ConsoleScanner.close();
 }</code></pre>
 
-        <h3>Globals class</h3>
+        <h3>Globals Class</h3>
         <p>The Globals class contains a few variables that can be used anywhere in the program, this is done primarily
           to circumvent the lack of a dedicated database for the system and allows the program to access all stored data
           easily. These are public static so can be accessed from anywhere in the program.</p>
@@ -102,7 +102,7 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
             href="https://howtodoinjava.com/java/array/array-vs-arraylist/">https://howtodoinjava.com/java/array/array-vs-arraylist/</a>).
         </p>
 
-        <h3>Menu class</h3>
+        <h3>Menu Class</h3>
         <p>The menu class has all the generic menu functions. Most menus with user interaction are done using while
           loops to repeat the menu until it is not needed anymore and selection for acting upon user input. For menus I
           have used primarily switch-case statements as they are faster for selection statements with more than 5 cases
@@ -119,7 +119,7 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
           of the String is equal (<a href="https://howtodoinjava.com/java/string/string-equals-method/">Java
             String.equals() with Examples - HowToDoInJava</a>).</p>
 
-        <h3>Person class</h3>
+        <h3>Person Class</h3>
         <p>The person class is an abstract class used as a base class for system user classes to inherit from and holds
           the basic properties and methods that are used by all users. This is an abstract class which means that
           objects cannot be created off it and to create an object, another class must inherit it and be used to create
@@ -129,12 +129,12 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
           because there shouldn’t be a generic person made and it provides security by hiding information from the user
           that isn’t essential to them. </p>
 
-        <h3>Staff class</h3>
+        <h3>Staff Class</h3>
         <p>The staff class inherits from the person class and provides the basic functionality of a staff member such as
           managing courses attached to themselves. It declares the mStaffCourseList ArrayList which contains all the
           courses attached to the staff member. </p>
 
-        <h4>Admin class</h4>
+        <h4>Admin Class</h4>
         <p>The admin class inherits from the staff class and adds functionality for only admins such as adding new staff
           members. It also overrides the actionMenu() method which is used to choose the action the user would like to
           make to allow the user to access the functions available to only them. This is done using method overriding
@@ -143,7 +143,7 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
             href="https://docs.oracle.com/javase/tutorial/java/IandI/override.html">The Java™ Tutorials >
             Learning the Java Language > Interfaces and Inheritance) (oracle.com)</a>). </p>
 
-        <h4>Teacher and student classes</h4>
+        <h4>Teacher and Student Classes</h4>
 
         <p>The teacher and student classes inherit from the staff and person classes respectively and adds
           functionality only available to their class type and overrides the actionMenu() method. </p>
