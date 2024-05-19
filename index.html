@@ -101,6 +101,19 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
             array has a static length and cannot be changed after initialisation</a>.
         </p>
 
+        <pre class="mt-2 mb-3 p-2 bg-dark text-light rounded overflow-x-auto"><code>public class Globals
+{
+    // List of all students
+    public static ArrayList<Person> StudentList = new ArrayList<>();
+    // List of all staff members
+    public static ArrayList<Person> StaffList = new ArrayList<>();
+    // List of all courses
+    public static ArrayList<Course> CourseList = new ArrayList<>();
+
+    // Global scanner class to be used wherever
+    public static final Scanner ConsoleScanner = new Scanner(System.in);
+}</code></pre>
+
         <h3>Menu Class</h3>
         <p>The menu class has all the generic menu functions. Most menus with user interaction are done using while
           loops to repeat the menu until it is not needed anymore and selection for acting upon user input. For menus I
@@ -188,6 +201,16 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
             less system
             calls compared to just using FileWriter if there are multiple writes before being closed</a>.</p>
 
+        <pre class="mt-2 mb-3 p-2 bg-dark text-light rounded overflow-x-auto"><code>FileWriter fileWriter = new FileWriter(file);
+BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+bufferedWriter.write(student.getID() + "\n");
+bufferedWriter.write(student.getPassword() + "\n");
+bufferedWriter.write(student.getFirstName() + "\n");
+bufferedWriter.write(student.getSurname() + "\n");
+
+bufferedWriter.close();</code></pre>
+
         <h3>ReadFiles</h3>
 
         <p>The ReadFiles class contains static methods that read objects from files such as staff, students, and
@@ -196,6 +219,16 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
           found in the directory for the object type. After checking the array isn’t null, it then iterates through the
           array and reads each object individually before checking if the object returned is null, if not it then gets
           added to the global ArrayList for the object type.</p>
+
+        <pre class="mt-2 mb-3 p-2 bg-dark text-light rounded overflow-x-auto"><code>FileReader fileReader = new FileReader(file);
+BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+String id = bufferedReader.readLine();
+String password = bufferedReader.readLine();
+String firstName = bufferedReader.readLine();
+String surname = bufferedReader.readLine();
+
+bufferedReader.close();</code></pre>
 
         <p>Individual students are read using BufferedReader over FileReader comes with multiple benefits, detailed
           below
