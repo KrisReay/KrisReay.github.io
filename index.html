@@ -12,7 +12,7 @@
 
 <body>
 
-  <main>
+  <main class="">
     <div class="container">
       <div class="card shadow p-4 mt-3">
 
@@ -23,17 +23,22 @@
           will detail the process and methods I used for each class.</p>
 
         <h2>Architecture and classes</h2>
+
         <p>In my classes I have used inheritance to create my class structure which is the act of using a super class
           (the class a subclass is inheriting from) as a template where the subclass (the class that is inheriting from
           the super class) then has the same behaviours as the super class but can add or override them. An example of a
-          basic inheritance diagram is shown in the diagram below from the official Java documentation. (<a
+          basic inheritance diagram is shown in the diagram below from the official Java documentation (<a
             href="https://docs.oracle.com/javase/tutorial/java/concepts/inheritance.html">What Is Inheritance? (The
-            Java™ Tutorials > Learning the Java Language > Object-Oriented Programming Concepts) (oracle.com)</a>) </p>
+            Java™ Tutorials > Learning the Java Language > Object-Oriented Programming Concepts) (oracle.com)</a>).</p>
 
-            <div class="image-container">
-              <img src="images/Inheritance diagram.jpg" alt="A diagram of classes in a hierarchy." class="img-fluid">
-            </div>
-            
+        <div class="image-container">
+          <figure class="figure">
+            <img src="images/Inheritance diagram.jpg" alt="A diagram of classes in a hierarchy." class="img-fluid">
+            <figcaption class="figure-caption">Figure 1: An example of inheritance using types of bike to demonstrate.
+            </figcaption>
+          </figure>
+
+        </div>
 
         <p>With the use of classes, I have used encapsulation to increase the security of my code. Encapsulation is the
           use of the private keyword, getters, and setters to restrict direct access to variables. The advantage of this
@@ -43,11 +48,41 @@
             href="https://dev.to/princeibs/oop-series-encapsulation-in-java-1n51">(OOP Series: Encapsulation In Java -
             DEV Community)</a></p>
 
+
+        <pre class="m-0 p-2 bg-dark text-light rounded overflow-x-auto"><code>// List of staff assigned to course
+private ArrayList<String> mStaffCourseList = new ArrayList<>();
+
+public ArrayList<String> getStaffCourseList()
+{
+    return mStaffCourseList;
+}
+
+public void setStaffCourseList(ArrayList<String> newCourseList)
+{
+    mStaffCourseList = newCourseList;
+}</code></pre>
+
+
         <h3>Main class</h3>
         <p>The main class is where the basic initialization of key properties and some generic methods takes place.</p>
         <p>The main method is called when the program runs and it’s where the Staff, Student, and Course lists are
           populated using functions in the ReadFiles class. An instance of the Menu class called menu is also
           instantiated and then the mainMenu function of the Menu class is run. </p>
+
+        <pre class="m-0 p-2 bg-dark text-light rounded overflow-x-auto"><code>public static void main(String[] args)
+{
+    // Loads in all recorded data for each list
+    Globals.StaffList = ReadFiles.readStaffFromFile();
+    Globals.StudentList = ReadFiles.readStudentsFromFile();
+    Globals.CourseList = ReadFiles.readCoursesFromFile();
+
+    // Creates a new instance of the Menu class and runs the mainMenu function
+    Menu menu = new Menu();
+    menu.mainMenu();
+
+    // Closes the scanner as the program ends
+    Globals.ConsoleScanner.close();
+}</code></pre>
 
         <h3>Globals class</h3>
         <p>The Globals class contains a few variables that can be used anywhere in the program, this is done primarily
@@ -129,6 +164,15 @@
             href="https://stackoverflow.com/questions/4709175/what-are-enums-and-why-are-they-useful/4709224#4709224">java
             - What are enums and why are they useful? - Stack Overflow</a>).</p>
 
+        <pre class="m-0 p-2 bg-dark text-light rounded overflow-x-auto"><code>public enum CourseTypes
+{
+  HE,
+  VOC,
+  ALEVEL,
+  TLEVEL,
+  INVALID
+}</code></pre>
+
         <h3>WriteFiles</h3>
 
         <p>The WriteFiles class contains static methods to write objects to files such as staff, students, and courses.
@@ -163,42 +207,43 @@
             GeeksforGeeks</a>).</p>
 
         <div class="table-responsive">
-        <table class="table table-striped table-light">
-          <thead>
-            <tr>
-              <th>Basis</th>
-              <th>BufferedReader</th>
-              <th>BufferedWriter</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Use</td>
-              <td>It is used to read characters from any type of character input stream (String, Files, etc.)</td>
-              <td>It can be used only for reading files</td>
-            </tr>
-            <tr>
-              <td>Buffer</td>
-              <td>Uses Buffer internally to read characters from</td>
-              <td>Doesn’t use Buffer. Directly reads from the file by accessing the hard drive.</td>
-            </tr>
-            <tr>
-              <td>Speed</td>
-              <td>Faster</td>
-              <td>Slower</td>
-            </tr>
-            <tr>
-              <td>Efficiency</td>
-              <td>Much more efficient for reading files</td>
-              <td>Less efficient</td>
-            </tr>
-            <tr>
-              <td>Reading Lines</td>
-              <td>BufferedReader can be used to read a single character at a time as well as a line at a time.</td>
-              <td>It can read only one character at a time, can not read lines</td>
-            </tr>
-          </tbody>
-        </table>
+          <table class="table table-striped table-light">
+            <thead>
+              <tr>
+                <th>Basis</th>
+                <th>BufferedReader</th>
+                <th>BufferedWriter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Use</td>
+                <td>It is used to read characters from any type of character input stream (String, Files, etc.)</td>
+                <td>It can be used only for reading files</td>
+              </tr>
+              <tr>
+                <td>Buffer</td>
+                <td>Uses Buffer internally to read characters from</td>
+                <td>Doesn’t use Buffer. Directly reads from the file by accessing the hard drive.</td>
+              </tr>
+              <tr>
+                <td>Speed</td>
+                <td>Faster</td>
+                <td>Slower</td>
+              </tr>
+              <tr>
+                <td>Efficiency</td>
+                <td>Much more efficient for reading files</td>
+                <td>Less efficient</td>
+              </tr>
+              <tr>
+                <td>Reading Lines</td>
+                <td>BufferedReader can be used to read a single character at a time as well as a line at a time.</td>
+                <td>It can read only one character at a time, can not read lines</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <h2>Testing</h2>
 
