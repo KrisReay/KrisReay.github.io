@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>My Website</title>
   <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./StyleSheets/Styles.css">
 </head>
 
 <body>
@@ -30,6 +31,12 @@
           basic inheritance diagram is shown in the diagram below from the official Java documentation. (<a
             href="https://docs.oracle.com/javase/tutorial/java/concepts/inheritance.html">What Is Inheritance? (The
             Java™ Tutorials > Learning the Java Language > Object-Oriented Programming Concepts) (oracle.com)</a>) </p>
+
+            <div class="image-container">
+              <img src="images/Inheritance diagram.jpg" alt="A diagram of classes in a hierarchy." class="img-fluid">
+            </div>
+            
+
         <p>With the use of classes, I have used encapsulation to increase the security of my code. Encapsulation is the
           use of the private keyword, getters, and setters to restrict direct access to variables. The advantage of this
           that I have taken advantage of in my program is that it provides data hiding, protecting the variables from
@@ -157,18 +164,60 @@
             Between BufferedReader and FileReader in Java -
             GeeksforGeeks</a>).</p>
 
+        <table class="table table-striped table-light">
+          <thead>
+            <tr>
+              <th>Basis</th>
+              <th>BufferedReader</th>
+              <th>BufferedWriter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Use</td>
+              <td>It is used to read characters from any type of character input stream (String, Files, etc.)</td>
+              <td>It can be used only for reading files</td>
+            </tr>
+            <tr>
+              <td>Buffer</td>
+              <td>Uses Buffer internally to read characters from</td>
+              <td>Doesn’t use Buffer. Directly reads from the file by accessing the hard drive.</td>
+            </tr>
+            <tr>
+              <td>Speed</td>
+              <td>Faster</td>
+              <td>Slower</td>
+            </tr>
+            <tr>
+              <td>Efficiency</td>
+              <td>Much more efficient for reading files</td>
+              <td>Less efficient</td>
+            </tr>
+            <tr>
+              <td>Reading Lines</td>
+              <td>BufferedReader can be used to read a single character at a time as well as a line at a time.</td>
+              <td>It can read only one character at a time, can not read lines</td>
+            </tr>
+          </tbody>
+        </table>
+
         <h2>Testing</h2>
 
         <h3>Overview</h3>
 
         <p>To test my system, I decided to use some unit tests which are tests that focus on individual parts of the
-          system to check they all work and help isolate areas of the system (<a hre="https://www.geeksforgeeks.org/unit-testing-software-testing/">Unit Testing - Software Testing -
-          GeeksforGeeks</a>). I have tested some key functions using JUnit 4, an open-source testing framework that uses
-          code annotations to identify test methods to be run (<a href="https://www.vogella.com/tutorials/JUnit4/article.html">Unit Testing with JUnit 4 - Tutorial (vogella.com)</a>).</p>
+          system to check they all work and help isolate areas of the system (<a
+            hre="https://www.geeksforgeeks.org/unit-testing-software-testing/">Unit Testing - Software Testing -
+            GeeksforGeeks</a>). I have tested some key functions using JUnit 4, an open-source testing framework that
+          uses
+          code annotations to identify test methods to be run (<a
+            href="https://www.vogella.com/tutorials/JUnit4/article.html">Unit Testing with JUnit 4 - Tutorial
+            (vogella.com)</a>).</p>
 
-          <p>The key functions I decided to unit test were the password checks for the login of each type of user and the
+        <p>The key functions I decided to unit test were the password checks for the login of each type of user and the
           reading and writing of files for each type of object written to a file. Ideally all functions should be tested
-          in any way possible but in the interest of time, I decided to limit my testing to a few important functions.</p>
+          in any way possible but in the interest of time, I decided to limit my testing to a few important functions.
+        </p>
       </div>
     </div>
   </main>
