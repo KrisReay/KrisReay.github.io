@@ -14,15 +14,15 @@
 
   <main class="">
     <div class="container">
-      <div class="card shadow p-4 mt-3">
+      <div class="card shadow p-4 mt-3 mb-3">
 
-        <h1 class="m-0 text-center">Kris Reay's Devlog</h1>
+        <h1 class="mt-2 mb-3 text-center">Kris Reay's Devlog</h1>
 
-        <h2>Introduction/overview</h2>
+        <h2 class="mb-4 mt-3">Introduction/overview</h2>
         <p>Recently I have been building a rudimentary record system for use by an education provider. In this article I
           will detail the process and methods I used for each class.</p>
 
-        <h2>Architecture and Classes</h2>
+        <h2 class="mb-4 mt-3">Architecture and Classes</h2>
 
         <p>In my classes I have used inheritance to create my class structure which is the act of using a super class
           (class a subclass is inheriting from) as a template where the subclass (class inheriting from
@@ -49,7 +49,7 @@
             control and reduced exceptions of the variables</a>.</p>
 
 
-        <pre class="m-0 p-2 bg-dark text-light rounded overflow-x-auto"><code>// List of staff assigned to course
+        <pre class="mt-2 mb-3 p-2 bg-dark text-light rounded overflow-x-auto"><code>// List of staff assigned to course
 private ArrayList<String> mStaffCourseList = new ArrayList<>();
 
 public ArrayList<String> getStaffCourseList()
@@ -69,7 +69,7 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
           populated using functions in the ReadFiles class. An instance of the Menu class called menu is also
           instantiated and then the mainMenu function of the Menu class is run. </p>
 
-        <pre class="m-0 p-2 bg-dark text-light rounded overflow-x-auto"><code>public static void main(String[] args)
+        <pre class="mt-2 mb-3 p-2 bg-dark text-light rounded overflow-x-auto"><code>public static void main(String[] args)
 {
     // Loads in all recorded data for each list
     Globals.StaffList = ReadFiles.readStaffFromFile();
@@ -177,7 +177,7 @@ public void setStaffCourseList(ArrayList<String> newCourseList)
             any
             errors caused by passing in an invalid value</a>.</p>
 
-        <pre class="m-0 p-2 bg-dark text-light rounded overflow-x-auto"><code>public enum CourseTypes
+        <pre class="mt-2 mb-3 p-2 bg-dark text-light rounded overflow-x-auto"><code>public enum CourseTypes
 {
   HE,
   VOC,
@@ -278,7 +278,7 @@ bufferedReader.close();</code></pre>
           </figcaption>
         </figure>
 
-        <h2>Testing</h2>
+        <h2 class="mb-4 mt-3">Testing</h2>
 
         <h3>Overview</h3>
 
