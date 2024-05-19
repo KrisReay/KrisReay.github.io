@@ -38,13 +38,13 @@
             href="https://dev.to/princeibs/oop-series-encapsulation-in-java-1n51">(OOP Series: Encapsulation In Java -
             DEV Community)</a></p>
 
-        <h2>Main class</h2>
+        <h3>Main class</h3>
         <p>The main class is where the basic initialization of key properties and some generic methods takes place.</p>
         <p>The main method is called when the program runs and it’s where the Staff, Student, and Course lists are
           populated using functions in the ReadFiles class. An instance of the Menu class called menu is also
           instantiated and then the mainMenu function of the Menu class is run. </p>
 
-        <h2>Globals class</h2>
+        <h3>Globals class</h3>
         <p>The Globals class contains a few variables that can be used anywhere in the program, this is done primarily
           to circumvent the lack of a dedicated database for the system and allows the program to access all stored data
           easily. These are public static so can be accessed from anywhere in the program.</p>
@@ -62,7 +62,7 @@
             href="https://howtodoinjava.com/java/array/array-vs-arraylist/">https://howtodoinjava.com/java/array/array-vs-arraylist/</a>).
         </p>
 
-        <h2>Menu class</h2>
+        <h3>Menu class</h3>
         <p>The menu class has all the generic menu functions. Most menus with user interaction are done using while
           loops to repeat the menu until it is not needed anymore and selection for acting upon user input. For menus I
           have used primarily switch-case statements as they are faster for selection statements with more than 5 cases
@@ -78,6 +78,97 @@
           type, it is an object so == compares the references of the strings which may be different even if the content
           of the String is equal (<a href="https://howtodoinjava.com/java/string/string-equals-method/">Java
             String.equals() with Examples - HowToDoInJava</a>).</p>
+
+        <h3>Person class</h3>
+        <p>The person class is an abstract class used as a base class for system user classes to inherit from and holds
+          the basic properties and methods that are used by all users. This is an abstract class which means that
+          objects cannot be created off it and to create an object, another class must inherit it and be used to create
+          the object provided the class inheriting it isn’t abstract (<a
+            href="https://www.w3schools.com/java/java_abstract.asp">Java Abstraction (w3schools.com)</a>). I’ve done
+          this
+          because there shouldn’t be a generic person made and it provides security by hiding information from the user
+          that isn’t essential to them. </p>
+
+        <h3>Staff class</h3>
+        <p>The staff class inherits from the person class and provides the basic functionality of a staff member such as
+          managing courses attached to themselves. It declares the mStaffCourseList ArrayList which contains all the
+          courses attached to the staff member. </p>
+
+        <h4>Admin class</h4>
+        <p>The admin class inherits from the staff class and adds functionality for only admins such as adding new staff
+          members. It also overrides the actionMenu() method which is used to choose the action the user would like to
+          make to allow the user to access the functions available to only them. This is done using method overriding
+          which means the actionMenu() function declared in the staff class, the base class, is overridden and the
+          function in the admin class, the subclass, is used (Overriding and Hiding Methods (<a
+            href="https://docs.oracle.com/javase/tutorial/java/IandI/override.html">The Java™ Tutorials >
+            Learning the Java Language > Interfaces and Inheritance) (oracle.com)</a>). </p>
+
+        <h4>Teacher and student classes</h4>
+
+        <p>The teacher and student classes inherit from the staff and person classes respectively and adds
+          functionality only available to their class type and overrides the actionMenu() method. </p>
+
+
+        <h3>Courses</h3>
+
+        <p>The course class is a basic class that creates a structure for courses to be created, using the CourseTypes
+          enum
+          to determine the type of course from a static set of values.</p>
+
+        <h3>CourseTypes</h3>
+
+        <p>The CourseTypes is an enum which holds each type of course as constants. An enum is appropriate for this as
+          there is a limited number of CourseTypes available in the program, making it easily readable and preventing
+          any
+          errors caused by passing in an invalid value (<a
+            href="https://stackoverflow.com/questions/4709175/what-are-enums-and-why-are-they-useful/4709224#4709224">java
+            - What are enums and why are they useful? - Stack Overflow</a>).</p>
+
+        <h3>WriteFiles</h3>
+
+        <p>The WriteFiles class contains static methods to write objects to files such as staff, students, and courses.
+          It
+          creates a new file with the file path being set to the directory passed into the function and the id of the
+          object appended to it. It then creates the directory if it doesn’t already exist using mkdir(). I then created
+          a
+          FileWriter passing in the File created before and use that to create a new BufferedWriter. Using
+          BufferedWriter
+          allows efficient writing (<a
+            href="https://www.geeksforgeeks.org/io-bufferedwriter-class-methods-java/">Java.io.BufferedWriter class
+            methods in Java - GeeksforGeeks</a>) by making less system
+          calls compared to just using FileWriter if there are multiple writes before being closed (<a
+            href="https://stackoverflow.com/questions/12350248/java-difference-between-filewriter-and-bufferedwriter/12350364#12350364">file
+            io - Java
+            difference between FileWriter and BufferedWriter - Stack Overflow</a>).</p>
+
+        <h3>ReadFiles</h3>
+
+        <p>The ReadFiles class contains static methods that read objects from files such as staff, students, and
+          courses. This and the WriteFiles class make up the basis of the record system. It creates a new ArrayList of
+          the type of object it will be reading and then creates a new array of files that is set to the list of files
+          found in the directory for the object type. After checking the array isn’t null, it then iterates through the
+          array and reads each object individually before checking if the object returned is null, if not it then gets
+          added to the global ArrayList for the object type.</p>
+
+        <p>Individual students are read using BufferedReader over FileReader comes with multiple benefits, detailed
+          below
+          in the table created by GeeksforGeeks (<a
+            href="https://www.geeksforgeeks.org/difference-between-bufferedreader-and-filereader-in-java/">Difference
+            Between BufferedReader and FileReader in Java -
+            GeeksforGeeks</a>).</p>
+
+        <h2>Testing</h2>
+
+        <h3>Overview</h3>
+
+        <p>To test my system, I decided to use some unit tests which are tests that focus on individual parts of the
+          system to check they all work and help isolate areas of the system (<a hre="https://www.geeksforgeeks.org/unit-testing-software-testing/">Unit Testing - Software Testing -
+          GeeksforGeeks</a>). I have tested some key functions using JUnit 4, an open-source testing framework that uses
+          code annotations to identify test methods to be run (<a href="https://www.vogella.com/tutorials/JUnit4/article.html">Unit Testing with JUnit 4 - Tutorial (vogella.com)</a>).</p>
+
+          <p>The key functions I decided to unit test were the password checks for the login of each type of user and the
+          reading and writing of files for each type of object written to a file. Ideally all functions should be tested
+          in any way possible but in the interest of time, I decided to limit my testing to a few important functions.</p>
       </div>
     </div>
   </main>
